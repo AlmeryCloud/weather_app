@@ -1,0 +1,24 @@
+import 'package:get_it/get_it.dart';
+import 'package:weather_app/api/weather_api_client.dart';
+import 'package:weather_app/interfaces/service_locator.dart';
+import 'package:weather_app/providers/api_client_provider.dart';
+import 'package:weather_app/repositories/weather_repository.dart';
+
+class RepositoryProvider implements ServiceLocator {
+  final _getIt = GetIt.asNewInstance();
+
+  static final instance = RepositoryProvider();
+
+  ApiClientProvider get _apiClientProvider => ApiClientProvider.instance;
+
+  @override
+  T get<T extends Object>() => _getIt<T>();
+
+  Future<void> initialize() async {
+    await _getIt.reset();
+    await _apiClientProvider.initialize();
+    _getIt.registerLazySingleton(
+      () => WeatherRepository(_apiClientProvider.get<WeatherApiClient>()),
+    );
+  }
+}

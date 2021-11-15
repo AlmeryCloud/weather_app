@@ -5,11 +5,12 @@ analyzer:
     strict-inference: true # https://github.com/dart-lang/language/issues/508
     strict-raw-types: true # https://github.com/dart-lang/language/blob/master/resources/type-system/strict-raw-types.md
   errors:
-    undefined_prefixed_name: ignore
     todo: warning
+    dead_code: warning
     deprecated_member_use_from_same_package: info
     deprecated_member_use: info
-    dead_code: warning
+    undefined_prefixed_name: ignore
+    invalid_annotation_target: ignore
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"

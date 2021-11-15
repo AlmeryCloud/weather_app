@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_app/app_theme.dart';
 import 'package:weather_app/navigation/generated_routes.dart';
+import 'package:weather_app/widgets/app_theme.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
