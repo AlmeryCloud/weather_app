@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'forecast.dart';
+part of 'weather_forecast.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,71 +13,77 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Forecast _$ForecastFromJson(Map<String, dynamic> json) {
-  return _Forecast.fromJson(json);
+WeatherForecast _$WeatherForecastFromJson(Map<String, dynamic> json) {
+  return _WeatherForecast.fromJson(json);
 }
 
 /// @nodoc
-class _$ForecastTearOff {
-  const _$ForecastTearOff();
+class _$WeatherForecastTearOff {
+  const _$WeatherForecastTearOff();
 
-  _Forecast call(
+  _WeatherForecast call(
       {required double lat,
       required double lon,
       required String timezone,
       @JsonKey(name: 'timezone_offset') required int timezoneOffset,
-      required List<Weather>? daily}) {
-    return _Forecast(
+      required List<DailyWeather>? daily,
+      required List<HourlyWeather>? hourly}) {
+    return _WeatherForecast(
       lat: lat,
       lon: lon,
       timezone: timezone,
       timezoneOffset: timezoneOffset,
       daily: daily,
+      hourly: hourly,
     );
   }
 
-  Forecast fromJson(Map<String, Object?> json) {
-    return Forecast.fromJson(json);
+  WeatherForecast fromJson(Map<String, Object?> json) {
+    return WeatherForecast.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Forecast = _$ForecastTearOff();
+const $WeatherForecast = _$WeatherForecastTearOff();
 
 /// @nodoc
-mixin _$Forecast {
+mixin _$WeatherForecast {
   double get lat => throw _privateConstructorUsedError;
   double get lon => throw _privateConstructorUsedError;
   String get timezone => throw _privateConstructorUsedError;
   @JsonKey(name: 'timezone_offset')
   int get timezoneOffset => throw _privateConstructorUsedError;
-  List<Weather>? get daily => throw _privateConstructorUsedError;
+  List<DailyWeather>? get daily => throw _privateConstructorUsedError;
+  List<HourlyWeather>? get hourly => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ForecastCopyWith<Forecast> get copyWith =>
+  $WeatherForecastCopyWith<WeatherForecast> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ForecastCopyWith<$Res> {
-  factory $ForecastCopyWith(Forecast value, $Res Function(Forecast) then) =
-      _$ForecastCopyWithImpl<$Res>;
+abstract class $WeatherForecastCopyWith<$Res> {
+  factory $WeatherForecastCopyWith(
+          WeatherForecast value, $Res Function(WeatherForecast) then) =
+      _$WeatherForecastCopyWithImpl<$Res>;
   $Res call(
       {double lat,
       double lon,
       String timezone,
       @JsonKey(name: 'timezone_offset') int timezoneOffset,
-      List<Weather>? daily});
+      List<DailyWeather>? daily,
+      List<HourlyWeather>? hourly});
 }
 
 /// @nodoc
-class _$ForecastCopyWithImpl<$Res> implements $ForecastCopyWith<$Res> {
-  _$ForecastCopyWithImpl(this._value, this._then);
+class _$WeatherForecastCopyWithImpl<$Res>
+    implements $WeatherForecastCopyWith<$Res> {
+  _$WeatherForecastCopyWithImpl(this._value, this._then);
 
-  final Forecast _value;
+  final WeatherForecast _value;
   // ignore: unused_field
-  final $Res Function(Forecast) _then;
+  final $Res Function(WeatherForecast) _then;
 
   @override
   $Res call({
@@ -86,6 +92,7 @@ class _$ForecastCopyWithImpl<$Res> implements $ForecastCopyWith<$Res> {
     Object? timezone = freezed,
     Object? timezoneOffset = freezed,
     Object? daily = freezed,
+    Object? hourly = freezed,
   }) {
     return _then(_value.copyWith(
       lat: lat == freezed
@@ -107,32 +114,41 @@ class _$ForecastCopyWithImpl<$Res> implements $ForecastCopyWith<$Res> {
       daily: daily == freezed
           ? _value.daily
           : daily // ignore: cast_nullable_to_non_nullable
-              as List<Weather>?,
+              as List<DailyWeather>?,
+      hourly: hourly == freezed
+          ? _value.hourly
+          : hourly // ignore: cast_nullable_to_non_nullable
+              as List<HourlyWeather>?,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$ForecastCopyWith<$Res> implements $ForecastCopyWith<$Res> {
-  factory _$ForecastCopyWith(_Forecast value, $Res Function(_Forecast) then) =
-      __$ForecastCopyWithImpl<$Res>;
+abstract class _$WeatherForecastCopyWith<$Res>
+    implements $WeatherForecastCopyWith<$Res> {
+  factory _$WeatherForecastCopyWith(
+          _WeatherForecast value, $Res Function(_WeatherForecast) then) =
+      __$WeatherForecastCopyWithImpl<$Res>;
   @override
   $Res call(
       {double lat,
       double lon,
       String timezone,
       @JsonKey(name: 'timezone_offset') int timezoneOffset,
-      List<Weather>? daily});
+      List<DailyWeather>? daily,
+      List<HourlyWeather>? hourly});
 }
 
 /// @nodoc
-class __$ForecastCopyWithImpl<$Res> extends _$ForecastCopyWithImpl<$Res>
-    implements _$ForecastCopyWith<$Res> {
-  __$ForecastCopyWithImpl(_Forecast _value, $Res Function(_Forecast) _then)
-      : super(_value, (v) => _then(v as _Forecast));
+class __$WeatherForecastCopyWithImpl<$Res>
+    extends _$WeatherForecastCopyWithImpl<$Res>
+    implements _$WeatherForecastCopyWith<$Res> {
+  __$WeatherForecastCopyWithImpl(
+      _WeatherForecast _value, $Res Function(_WeatherForecast) _then)
+      : super(_value, (v) => _then(v as _WeatherForecast));
 
   @override
-  _Forecast get _value => super._value as _Forecast;
+  _WeatherForecast get _value => super._value as _WeatherForecast;
 
   @override
   $Res call({
@@ -141,8 +157,9 @@ class __$ForecastCopyWithImpl<$Res> extends _$ForecastCopyWithImpl<$Res>
     Object? timezone = freezed,
     Object? timezoneOffset = freezed,
     Object? daily = freezed,
+    Object? hourly = freezed,
   }) {
-    return _then(_Forecast(
+    return _then(_WeatherForecast(
       lat: lat == freezed
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
@@ -162,23 +179,28 @@ class __$ForecastCopyWithImpl<$Res> extends _$ForecastCopyWithImpl<$Res>
       daily: daily == freezed
           ? _value.daily
           : daily // ignore: cast_nullable_to_non_nullable
-              as List<Weather>?,
+              as List<DailyWeather>?,
+      hourly: hourly == freezed
+          ? _value.hourly
+          : hourly // ignore: cast_nullable_to_non_nullable
+              as List<HourlyWeather>?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Forecast implements _Forecast {
-  _$_Forecast(
+class _$_WeatherForecast implements _WeatherForecast {
+  _$_WeatherForecast(
       {required this.lat,
       required this.lon,
       required this.timezone,
       @JsonKey(name: 'timezone_offset') required this.timezoneOffset,
-      required this.daily});
+      required this.daily,
+      required this.hourly});
 
-  factory _$_Forecast.fromJson(Map<String, dynamic> json) =>
-      _$$_ForecastFromJson(json);
+  factory _$_WeatherForecast.fromJson(Map<String, dynamic> json) =>
+      _$$_WeatherForecastFromJson(json);
 
   @override
   final double lat;
@@ -190,51 +212,62 @@ class _$_Forecast implements _Forecast {
   @JsonKey(name: 'timezone_offset')
   final int timezoneOffset;
   @override
-  final List<Weather>? daily;
+  final List<DailyWeather>? daily;
+  @override
+  final List<HourlyWeather>? hourly;
 
   @override
   String toString() {
-    return 'Forecast(lat: $lat, lon: $lon, timezone: $timezone, timezoneOffset: $timezoneOffset, daily: $daily)';
+    return 'WeatherForecast(lat: $lat, lon: $lon, timezone: $timezone, timezoneOffset: $timezoneOffset, daily: $daily, hourly: $hourly)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Forecast &&
+            other is _WeatherForecast &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lon, lon) || other.lon == lon) &&
             (identical(other.timezone, timezone) ||
                 other.timezone == timezone) &&
             (identical(other.timezoneOffset, timezoneOffset) ||
                 other.timezoneOffset == timezoneOffset) &&
-            const DeepCollectionEquality().equals(other.daily, daily));
+            const DeepCollectionEquality().equals(other.daily, daily) &&
+            const DeepCollectionEquality().equals(other.hourly, hourly));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, lat, lon, timezone,
-      timezoneOffset, const DeepCollectionEquality().hash(daily));
+  int get hashCode => Object.hash(
+      runtimeType,
+      lat,
+      lon,
+      timezone,
+      timezoneOffset,
+      const DeepCollectionEquality().hash(daily),
+      const DeepCollectionEquality().hash(hourly));
 
   @JsonKey(ignore: true)
   @override
-  _$ForecastCopyWith<_Forecast> get copyWith =>
-      __$ForecastCopyWithImpl<_Forecast>(this, _$identity);
+  _$WeatherForecastCopyWith<_WeatherForecast> get copyWith =>
+      __$WeatherForecastCopyWithImpl<_WeatherForecast>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ForecastToJson(this);
+    return _$$_WeatherForecastToJson(this);
   }
 }
 
-abstract class _Forecast implements Forecast {
-  factory _Forecast(
+abstract class _WeatherForecast implements WeatherForecast {
+  factory _WeatherForecast(
       {required double lat,
       required double lon,
       required String timezone,
       @JsonKey(name: 'timezone_offset') required int timezoneOffset,
-      required List<Weather>? daily}) = _$_Forecast;
+      required List<DailyWeather>? daily,
+      required List<HourlyWeather>? hourly}) = _$_WeatherForecast;
 
-  factory _Forecast.fromJson(Map<String, dynamic> json) = _$_Forecast.fromJson;
+  factory _WeatherForecast.fromJson(Map<String, dynamic> json) =
+      _$_WeatherForecast.fromJson;
 
   @override
   double get lat;
@@ -246,9 +279,11 @@ abstract class _Forecast implements Forecast {
   @JsonKey(name: 'timezone_offset')
   int get timezoneOffset;
   @override
-  List<Weather>? get daily;
+  List<DailyWeather>? get daily;
+  @override
+  List<HourlyWeather>? get hourly;
   @override
   @JsonKey(ignore: true)
-  _$ForecastCopyWith<_Forecast> get copyWith =>
+  _$WeatherForecastCopyWith<_WeatherForecast> get copyWith =>
       throw _privateConstructorUsedError;
 }

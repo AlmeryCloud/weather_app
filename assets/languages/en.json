@@ -1,0 +1,9 @@
+{
+    "weather_forecast_options": {
+        "daily": "Daily",
+        "hourly": "Hourly"
+    },
+    "min": "min",
+    "max": "max",
+    "temperature": "temp"
+}

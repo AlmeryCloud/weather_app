@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-typedef AppBuilder = Widget Function(ThemeData);
+typedef AppBuilder = Widget Function(BuildContext, ThemeData);
 
 class AppTheme extends StatelessWidget {
   final AppBuilder builder;
@@ -12,7 +12,7 @@ class AppTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-    return builder(kAppTheme);
+    return builder(context, kAppTheme);
   }
 }
 

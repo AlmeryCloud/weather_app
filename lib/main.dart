@@ -1,11 +1,15 @@
 import 'dart:async';
 
 import 'package:colorize_lumberdash/colorize_lumberdash.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lumberdash/lumberdash.dart';
 import 'package:weather_app/app.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
   putLumberdashToWork(
     withClients: [
       ColorizeLumberdash(),
@@ -14,7 +18,7 @@ void main() {
 
   FlutterError.onError = logError;
 
-  runZonedGuarded(
+  await runZonedGuarded(
     () async {
       return runApp(const App());
     },

@@ -27,7 +27,7 @@ class GeolocatorService {
       }
     } catch (error, stack) {
       logError(error, stacktrace: stack);
+      rethrow;
     }
-    return null;
   }
 }

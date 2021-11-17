@@ -1,23 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'weather.dart';
+part of 'daily_weather.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Weather _$$_WeatherFromJson(Map<String, dynamic> json) => _$_Weather(
-      dt: (json['dt'] as num).toDouble(),
-      sunrise: (json['sunrise'] as num).toDouble(),
-      sunset: (json['sunset'] as num).toDouble(),
-      moonrise: (json['moonrise'] as num).toDouble(),
-      moonset: (json['moonset'] as num).toDouble(),
+_$_DailyWeather _$$_DailyWeatherFromJson(Map<String, dynamic> json) =>
+    _$_DailyWeather(
+      dt: json['dt'] as int,
+      sunrise: json['sunrise'] as int,
+      sunset: json['sunset'] as int,
+      moonrise: json['moonrise'] as int,
+      moonset: json['moonset'] as int,
       moonPhase: (json['moon_phase'] as num).toDouble(),
       temp: Temperature.fromJson(json['temp'] as Map<String, dynamic>),
       feelsLike:
           Temperature.fromJson(json['feels_like'] as Map<String, dynamic>),
-      pressure: (json['pressure'] as num).toDouble(),
-      humidity: (json['humidity'] as num).toDouble(),
+      pressure: json['pressure'] as int,
+      humidity: json['humidity'] as int,
       dewPoint: (json['dew_point'] as num).toDouble(),
       windSpeed: (json['wind_speed'] as num).toDouble(),
       windDeg: (json['wind_deg'] as num).toDouble(),
@@ -30,7 +31,7 @@ _$_Weather _$$_WeatherFromJson(Map<String, dynamic> json) => _$_Weather(
       uvi: (json['uvi'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_WeatherToJson(_$_Weather instance) =>
+Map<String, dynamic> _$$_DailyWeatherToJson(_$_DailyWeather instance) =>
     <String, dynamic>{
       'dt': instance.dt,
       'sunrise': instance.sunrise,

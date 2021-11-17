@@ -19,5 +19,6 @@ class ApiClientProvider implements ServiceLocator {
     _getIt.registerLazySingleton(
       () => WeatherApiClient(_serviceProvider.get<HttpService>()),
     );
+    return _getIt.allReady();
   }
 }

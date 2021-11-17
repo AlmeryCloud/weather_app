@@ -11,14 +11,17 @@ environment:
 dependencies:
   colorize_lumberdash: ^3.0.0
   cupertino_icons: ^1.0.2
+  easy_localization: ^3.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.3
   flutter_svg: ^0.23.0+1
   freezed: ^0.15.1+1
+  geocoding: ^2.0.1
   geolocator: ^7.7.1
   get_it: ^7.2.0
   http: ^0.13.4
+  intl: ^0.17.0
   json_annotation: ^4.3.0
   lumberdash: ^3.0.0
 
@@ -35,3 +38,4 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/languages/

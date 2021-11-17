@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_app/api/weather_api_client.dart';
+import 'package:weather_app/blocs/bloc_factory.dart';
 import 'package:weather_app/providers/api_client_provider.dart';
+import 'package:weather_app/providers/repository_provider.dart';
 import 'package:weather_app/providers/service_provider.dart';
-import 'package:weather_app/services/geolocator_service.dart';
 import 'package:weather_app/widgets/app_theme.dart';
 import 'package:weather_app/widgets/common/app_image.dart';
 
@@ -27,19 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _initializeApp() async {
     await ServiceProvider.instance.initialize();
     await ApiClientProvider.instance.initialize();
-    // await RepositoryProvider.instance.initialize();
-
-    final coords = await ServiceProvider.instance
-        .get<GeolocatorService>()
-        .determinePosition();
-
-    final result = await ApiClientProvider.instance
-        .get<WeatherApiClient>()
-        .getDailyForecast(
-          // Kiev coords as default city
-          lat: coords?.latitude ?? 50.450001,
-          lon: coords?.longitude ?? 30.523333,
-        );
+    await RepositoryProvider.instance.initialize();
+    await BlocFactory.instance.initialize();
 
     await Future.delayed(const Duration(seconds: 3), () {});
   }

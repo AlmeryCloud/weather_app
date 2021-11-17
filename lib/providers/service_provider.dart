@@ -14,7 +14,8 @@ class ServiceProvider implements ServiceLocator {
   Future<void> initialize() async {
     await _getIt.reset();
     _getIt
-      ..registerLazySingleton(() => HttpService())
-      ..registerLazySingleton(() => GeolocatorService());
+      ..registerLazySingleton(() => GeolocatorService())
+      ..registerLazySingleton(() => HttpService());
+    return _getIt.allReady();
   }
 }

@@ -1,0 +1,9 @@
+{
+    "weather_forecast_options": {
+        "daily": "По дням",
+        "hourly": "По часам"
+    },
+    "min": "мин",
+    "max": "макс",
+    "temperature": "температура"
+}

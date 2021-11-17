@@ -1,10 +1,9 @@
 import 'package:lumberdash/lumberdash.dart';
-import 'package:weather_app/api/models/forecast.dart';
+import 'package:weather_app/api/models/weather_forecast.dart';
 import 'package:weather_app/services/http_service.dart';
 
 class WeatherApiClient {
   final HttpService _httpService;
-  // final SharedPrefsService _prefsService;
 
   const WeatherApiClient(this._httpService);
 
@@ -13,35 +12,7 @@ class WeatherApiClient {
   static const _apikey = '805c9de62197fc8ff9fcefdfebbbba21';
   static const _unit = 'metric';
 
-  // Future<dynamic> getCurrentWeather({
-  //   required double lat,
-  //   required double lon,
-  // }) async {
-  //   try {
-  //     final decodedJson = await _httpService.sendGETRequest(
-  //       baseUrl: _baseUrl,
-  //       path: _path,
-  //       method: 'weather',
-  //       params: {
-  //         'lat': '$lat',
-  //         'lon': '$lon',
-  //         'appid': _apikey,
-  //         'units': _unit,
-  //       },
-  //     );
-
-  //     print(decodedJson);
-
-  //     // final authResponse = AuthResponseModel.fromJson(decodedJson);
-  //     // await _prefsService.setAuthToken(authResponse.token);
-
-  //     return 12;
-  //   } catch (error) {
-  //     logError(error);
-  //   }
-  // }
-
-  Future<Forecast?> getHourlyForecast({
+  Future<WeatherForecast?> getHourlyForecast({
     required double lat,
     required double lon,
   }) async {
@@ -59,13 +30,14 @@ class WeatherApiClient {
         },
       );
 
-      return Forecast.fromJson(decodedJson);
+      return WeatherForecast.fromJson(decodedJson);
     } catch (error) {
       logError(error);
+      rethrow;
     }
   }
 
-  Future<Forecast?> getDailyForecast({
+  Future<WeatherForecast?> getDailyForecast({
     required double lat,
     required double lon,
   }) async {
@@ -83,9 +55,10 @@ class WeatherApiClient {
         },
       );
 
-      return Forecast.fromJson(decodedJson);
+      return WeatherForecast.fromJson(decodedJson);
     } catch (error) {
       logError(error);
+      rethrow;
     }
   }
 }
