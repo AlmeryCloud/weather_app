@@ -20,7 +20,7 @@ class HttpService {
     final response = await _httpClient.get(
       uri,
       headers: headers,
-    );
+    ).timeout(const Duration(seconds: 3));
 
     if (response.statusCode != 200) {
       throw HttpException(

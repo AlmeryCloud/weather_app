@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await RepositoryProvider.instance.initialize();
     await BlocFactory.instance.initialize();
 
-    await Future.delayed(const Duration(seconds: 3), () {});
+    // await Future.delayed(const Duration(seconds: 3), () {});
   }
 
   @override

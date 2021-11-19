@@ -18,11 +18,13 @@ class _$WeatherDetailsArgumentsTearOff {
   const _$WeatherDetailsArgumentsTearOff();
 
   _WeatherDetailsArguments call(
-      {required Placemark placemark,
+      {required LocationInfo locationInfo,
+      required String stringDate,
       HourlyWeather? hourlyWeather,
       DailyWeather? dailyWeather}) {
     return _WeatherDetailsArguments(
-      placemark: placemark,
+      locationInfo: locationInfo,
+      stringDate: stringDate,
       hourlyWeather: hourlyWeather,
       dailyWeather: dailyWeather,
     );
@@ -34,7 +36,8 @@ const $WeatherDetailsArguments = _$WeatherDetailsArgumentsTearOff();
 
 /// @nodoc
 mixin _$WeatherDetailsArguments {
-  Placemark get placemark => throw _privateConstructorUsedError;
+  LocationInfo get locationInfo => throw _privateConstructorUsedError;
+  String get stringDate => throw _privateConstructorUsedError;
   HourlyWeather? get hourlyWeather => throw _privateConstructorUsedError;
   DailyWeather? get dailyWeather => throw _privateConstructorUsedError;
 
@@ -49,10 +52,12 @@ abstract class $WeatherDetailsArgumentsCopyWith<$Res> {
           $Res Function(WeatherDetailsArguments) then) =
       _$WeatherDetailsArgumentsCopyWithImpl<$Res>;
   $Res call(
-      {Placemark placemark,
+      {LocationInfo locationInfo,
+      String stringDate,
       HourlyWeather? hourlyWeather,
       DailyWeather? dailyWeather});
 
+  $LocationInfoCopyWith<$Res> get locationInfo;
   $HourlyWeatherCopyWith<$Res>? get hourlyWeather;
   $DailyWeatherCopyWith<$Res>? get dailyWeather;
 }
@@ -68,15 +73,20 @@ class _$WeatherDetailsArgumentsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? placemark = freezed,
+    Object? locationInfo = freezed,
+    Object? stringDate = freezed,
     Object? hourlyWeather = freezed,
     Object? dailyWeather = freezed,
   }) {
     return _then(_value.copyWith(
-      placemark: placemark == freezed
-          ? _value.placemark
-          : placemark // ignore: cast_nullable_to_non_nullable
-              as Placemark,
+      locationInfo: locationInfo == freezed
+          ? _value.locationInfo
+          : locationInfo // ignore: cast_nullable_to_non_nullable
+              as LocationInfo,
+      stringDate: stringDate == freezed
+          ? _value.stringDate
+          : stringDate // ignore: cast_nullable_to_non_nullable
+              as String,
       hourlyWeather: hourlyWeather == freezed
           ? _value.hourlyWeather
           : hourlyWeather // ignore: cast_nullable_to_non_nullable
@@ -86,6 +96,13 @@ class _$WeatherDetailsArgumentsCopyWithImpl<$Res>
           : dailyWeather // ignore: cast_nullable_to_non_nullable
               as DailyWeather?,
     ));
+  }
+
+  @override
+  $LocationInfoCopyWith<$Res> get locationInfo {
+    return $LocationInfoCopyWith<$Res>(_value.locationInfo, (value) {
+      return _then(_value.copyWith(locationInfo: value));
+    });
   }
 
   @override
@@ -119,10 +136,13 @@ abstract class _$WeatherDetailsArgumentsCopyWith<$Res>
       __$WeatherDetailsArgumentsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Placemark placemark,
+      {LocationInfo locationInfo,
+      String stringDate,
       HourlyWeather? hourlyWeather,
       DailyWeather? dailyWeather});
 
+  @override
+  $LocationInfoCopyWith<$Res> get locationInfo;
   @override
   $HourlyWeatherCopyWith<$Res>? get hourlyWeather;
   @override
@@ -143,15 +163,20 @@ class __$WeatherDetailsArgumentsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? placemark = freezed,
+    Object? locationInfo = freezed,
+    Object? stringDate = freezed,
     Object? hourlyWeather = freezed,
     Object? dailyWeather = freezed,
   }) {
     return _then(_WeatherDetailsArguments(
-      placemark: placemark == freezed
-          ? _value.placemark
-          : placemark // ignore: cast_nullable_to_non_nullable
-              as Placemark,
+      locationInfo: locationInfo == freezed
+          ? _value.locationInfo
+          : locationInfo // ignore: cast_nullable_to_non_nullable
+              as LocationInfo,
+      stringDate: stringDate == freezed
+          ? _value.stringDate
+          : stringDate // ignore: cast_nullable_to_non_nullable
+              as String,
       hourlyWeather: hourlyWeather == freezed
           ? _value.hourlyWeather
           : hourlyWeather // ignore: cast_nullable_to_non_nullable
@@ -168,10 +193,15 @@ class __$WeatherDetailsArgumentsCopyWithImpl<$Res>
 
 class _$_WeatherDetailsArguments implements _WeatherDetailsArguments {
   _$_WeatherDetailsArguments(
-      {required this.placemark, this.hourlyWeather, this.dailyWeather});
+      {required this.locationInfo,
+      required this.stringDate,
+      this.hourlyWeather,
+      this.dailyWeather});
 
   @override
-  final Placemark placemark;
+  final LocationInfo locationInfo;
+  @override
+  final String stringDate;
   @override
   final HourlyWeather? hourlyWeather;
   @override
@@ -179,7 +209,7 @@ class _$_WeatherDetailsArguments implements _WeatherDetailsArguments {
 
   @override
   String toString() {
-    return 'WeatherDetailsArguments(placemark: $placemark, hourlyWeather: $hourlyWeather, dailyWeather: $dailyWeather)';
+    return 'WeatherDetailsArguments(locationInfo: $locationInfo, stringDate: $stringDate, hourlyWeather: $hourlyWeather, dailyWeather: $dailyWeather)';
   }
 
   @override
@@ -187,8 +217,10 @@ class _$_WeatherDetailsArguments implements _WeatherDetailsArguments {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _WeatherDetailsArguments &&
-            (identical(other.placemark, placemark) ||
-                other.placemark == placemark) &&
+            (identical(other.locationInfo, locationInfo) ||
+                other.locationInfo == locationInfo) &&
+            (identical(other.stringDate, stringDate) ||
+                other.stringDate == stringDate) &&
             (identical(other.hourlyWeather, hourlyWeather) ||
                 other.hourlyWeather == hourlyWeather) &&
             (identical(other.dailyWeather, dailyWeather) ||
@@ -196,8 +228,8 @@ class _$_WeatherDetailsArguments implements _WeatherDetailsArguments {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, placemark, hourlyWeather, dailyWeather);
+  int get hashCode => Object.hash(
+      runtimeType, locationInfo, stringDate, hourlyWeather, dailyWeather);
 
   @JsonKey(ignore: true)
   @override
@@ -208,12 +240,15 @@ class _$_WeatherDetailsArguments implements _WeatherDetailsArguments {
 
 abstract class _WeatherDetailsArguments implements WeatherDetailsArguments {
   factory _WeatherDetailsArguments(
-      {required Placemark placemark,
+      {required LocationInfo locationInfo,
+      required String stringDate,
       HourlyWeather? hourlyWeather,
       DailyWeather? dailyWeather}) = _$_WeatherDetailsArguments;
 
   @override
-  Placemark get placemark;
+  LocationInfo get locationInfo;
+  @override
+  String get stringDate;
   @override
   HourlyWeather? get hourlyWeather;
   @override

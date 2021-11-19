@@ -22,12 +22,12 @@ class _$TemperatureTearOff {
   const _$TemperatureTearOff();
 
   _Temperature call(
-      {required double day,
-      required double? min,
-      required double? max,
-      required double night,
-      required double eve,
-      required double morn}) {
+      {@HiveField(0) required double day,
+      @HiveField(1) required double? min,
+      @HiveField(2) required double? max,
+      @HiveField(3) required double night,
+      @HiveField(4) required double eve,
+      @HiveField(5) required double morn}) {
     return _Temperature(
       day: day,
       min: min,
@@ -48,11 +48,17 @@ const $Temperature = _$TemperatureTearOff();
 
 /// @nodoc
 mixin _$Temperature {
+  @HiveField(0)
   double get day => throw _privateConstructorUsedError;
+  @HiveField(1)
   double? get min => throw _privateConstructorUsedError;
+  @HiveField(2)
   double? get max => throw _privateConstructorUsedError;
+  @HiveField(3)
   double get night => throw _privateConstructorUsedError;
+  @HiveField(4)
   double get eve => throw _privateConstructorUsedError;
+  @HiveField(5)
   double get morn => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -67,12 +73,12 @@ abstract class $TemperatureCopyWith<$Res> {
           Temperature value, $Res Function(Temperature) then) =
       _$TemperatureCopyWithImpl<$Res>;
   $Res call(
-      {double day,
-      double? min,
-      double? max,
-      double night,
-      double eve,
-      double morn});
+      {@HiveField(0) double day,
+      @HiveField(1) double? min,
+      @HiveField(2) double? max,
+      @HiveField(3) double night,
+      @HiveField(4) double eve,
+      @HiveField(5) double morn});
 }
 
 /// @nodoc
@@ -129,12 +135,12 @@ abstract class _$TemperatureCopyWith<$Res>
       __$TemperatureCopyWithImpl<$Res>;
   @override
   $Res call(
-      {double day,
-      double? min,
-      double? max,
-      double night,
-      double eve,
-      double morn});
+      {@HiveField(0) double day,
+      @HiveField(1) double? min,
+      @HiveField(2) double? max,
+      @HiveField(3) double night,
+      @HiveField(4) double eve,
+      @HiveField(5) double morn});
 }
 
 /// @nodoc
@@ -187,29 +193,36 @@ class __$TemperatureCopyWithImpl<$Res> extends _$TemperatureCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 2, adapterName: 'TemperatureAdapter')
 class _$_Temperature implements _Temperature {
   _$_Temperature(
-      {required this.day,
-      required this.min,
-      required this.max,
-      required this.night,
-      required this.eve,
-      required this.morn});
+      {@HiveField(0) required this.day,
+      @HiveField(1) required this.min,
+      @HiveField(2) required this.max,
+      @HiveField(3) required this.night,
+      @HiveField(4) required this.eve,
+      @HiveField(5) required this.morn});
 
   factory _$_Temperature.fromJson(Map<String, dynamic> json) =>
       _$$_TemperatureFromJson(json);
 
   @override
+  @HiveField(0)
   final double day;
   @override
+  @HiveField(1)
   final double? min;
   @override
+  @HiveField(2)
   final double? max;
   @override
+  @HiveField(3)
   final double night;
   @override
+  @HiveField(4)
   final double eve;
   @override
+  @HiveField(5)
   final double morn;
 
   @override
@@ -246,27 +259,33 @@ class _$_Temperature implements _Temperature {
 
 abstract class _Temperature implements Temperature {
   factory _Temperature(
-      {required double day,
-      required double? min,
-      required double? max,
-      required double night,
-      required double eve,
-      required double morn}) = _$_Temperature;
+      {@HiveField(0) required double day,
+      @HiveField(1) required double? min,
+      @HiveField(2) required double? max,
+      @HiveField(3) required double night,
+      @HiveField(4) required double eve,
+      @HiveField(5) required double morn}) = _$_Temperature;
 
   factory _Temperature.fromJson(Map<String, dynamic> json) =
       _$_Temperature.fromJson;
 
   @override
+  @HiveField(0)
   double get day;
   @override
+  @HiveField(1)
   double? get min;
   @override
+  @HiveField(2)
   double? get max;
   @override
+  @HiveField(3)
   double get night;
   @override
+  @HiveField(4)
   double get eve;
   @override
+  @HiveField(5)
   double get morn;
   @override
   @JsonKey(ignore: true)

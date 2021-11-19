@@ -22,20 +22,20 @@ class _$HourlyWeatherTearOff {
   const _$HourlyWeatherTearOff();
 
   _HourlyWeather call(
-      {required int dt,
-      required double temp,
-      @JsonKey(name: 'feels_like') required double feelsLike,
-      required int pressure,
-      required int humidity,
-      required double uvi,
-      required double clouds,
-      required double visibility,
-      @JsonKey(name: 'dew_point') required double dewPoint,
-      @JsonKey(name: 'wind_speed') required double windSpeed,
-      @JsonKey(name: 'wind_deg') required double windDeg,
-      @JsonKey(name: 'wind_gust') required double windGust,
-      required List<WeatherInfo> weather,
-      required double pop}) {
+      {@HiveField(0) required int dt,
+      @HiveField(1) required double temp,
+      @HiveField(2) @JsonKey(name: 'feels_like') required double feelsLike,
+      @HiveField(3) required int pressure,
+      @HiveField(4) required int humidity,
+      @HiveField(5) required double uvi,
+      @HiveField(6) required double clouds,
+      @HiveField(7) required double visibility,
+      @HiveField(8) @JsonKey(name: 'dew_point') required double dewPoint,
+      @HiveField(9) @JsonKey(name: 'wind_speed') required double windSpeed,
+      @HiveField(10) @JsonKey(name: 'wind_deg') required double windDeg,
+      @HiveField(11) @JsonKey(name: 'wind_gust') required double windGust,
+      @HiveField(12) required List<WeatherInfo> weather,
+      @HiveField(13) required double pop}) {
     return _HourlyWeather(
       dt: dt,
       temp: temp,
@@ -64,24 +64,38 @@ const $HourlyWeather = _$HourlyWeatherTearOff();
 
 /// @nodoc
 mixin _$HourlyWeather {
+  @HiveField(0)
   int get dt => throw _privateConstructorUsedError;
+  @HiveField(1)
   double get temp => throw _privateConstructorUsedError;
+  @HiveField(2)
   @JsonKey(name: 'feels_like')
   double get feelsLike => throw _privateConstructorUsedError;
+  @HiveField(3)
   int get pressure => throw _privateConstructorUsedError;
+  @HiveField(4)
   int get humidity => throw _privateConstructorUsedError;
+  @HiveField(5)
   double get uvi => throw _privateConstructorUsedError;
+  @HiveField(6)
   double get clouds => throw _privateConstructorUsedError;
+  @HiveField(7)
   double get visibility => throw _privateConstructorUsedError;
+  @HiveField(8)
   @JsonKey(name: 'dew_point')
   double get dewPoint => throw _privateConstructorUsedError;
+  @HiveField(9)
   @JsonKey(name: 'wind_speed')
   double get windSpeed => throw _privateConstructorUsedError;
+  @HiveField(10)
   @JsonKey(name: 'wind_deg')
   double get windDeg => throw _privateConstructorUsedError;
+  @HiveField(11)
   @JsonKey(name: 'wind_gust')
   double get windGust => throw _privateConstructorUsedError;
+  @HiveField(12)
   List<WeatherInfo> get weather => throw _privateConstructorUsedError;
+  @HiveField(13)
   double get pop => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -96,20 +110,20 @@ abstract class $HourlyWeatherCopyWith<$Res> {
           HourlyWeather value, $Res Function(HourlyWeather) then) =
       _$HourlyWeatherCopyWithImpl<$Res>;
   $Res call(
-      {int dt,
-      double temp,
-      @JsonKey(name: 'feels_like') double feelsLike,
-      int pressure,
-      int humidity,
-      double uvi,
-      double clouds,
-      double visibility,
-      @JsonKey(name: 'dew_point') double dewPoint,
-      @JsonKey(name: 'wind_speed') double windSpeed,
-      @JsonKey(name: 'wind_deg') double windDeg,
-      @JsonKey(name: 'wind_gust') double windGust,
-      List<WeatherInfo> weather,
-      double pop});
+      {@HiveField(0) int dt,
+      @HiveField(1) double temp,
+      @HiveField(2) @JsonKey(name: 'feels_like') double feelsLike,
+      @HiveField(3) int pressure,
+      @HiveField(4) int humidity,
+      @HiveField(5) double uvi,
+      @HiveField(6) double clouds,
+      @HiveField(7) double visibility,
+      @HiveField(8) @JsonKey(name: 'dew_point') double dewPoint,
+      @HiveField(9) @JsonKey(name: 'wind_speed') double windSpeed,
+      @HiveField(10) @JsonKey(name: 'wind_deg') double windDeg,
+      @HiveField(11) @JsonKey(name: 'wind_gust') double windGust,
+      @HiveField(12) List<WeatherInfo> weather,
+      @HiveField(13) double pop});
 }
 
 /// @nodoc
@@ -207,20 +221,20 @@ abstract class _$HourlyWeatherCopyWith<$Res>
       __$HourlyWeatherCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int dt,
-      double temp,
-      @JsonKey(name: 'feels_like') double feelsLike,
-      int pressure,
-      int humidity,
-      double uvi,
-      double clouds,
-      double visibility,
-      @JsonKey(name: 'dew_point') double dewPoint,
-      @JsonKey(name: 'wind_speed') double windSpeed,
-      @JsonKey(name: 'wind_deg') double windDeg,
-      @JsonKey(name: 'wind_gust') double windGust,
-      List<WeatherInfo> weather,
-      double pop});
+      {@HiveField(0) int dt,
+      @HiveField(1) double temp,
+      @HiveField(2) @JsonKey(name: 'feels_like') double feelsLike,
+      @HiveField(3) int pressure,
+      @HiveField(4) int humidity,
+      @HiveField(5) double uvi,
+      @HiveField(6) double clouds,
+      @HiveField(7) double visibility,
+      @HiveField(8) @JsonKey(name: 'dew_point') double dewPoint,
+      @HiveField(9) @JsonKey(name: 'wind_speed') double windSpeed,
+      @HiveField(10) @JsonKey(name: 'wind_deg') double windDeg,
+      @HiveField(11) @JsonKey(name: 'wind_gust') double windGust,
+      @HiveField(12) List<WeatherInfo> weather,
+      @HiveField(13) double pop});
 }
 
 /// @nodoc
@@ -314,58 +328,73 @@ class __$HourlyWeatherCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 4, adapterName: 'HourlyWeatherAdapter')
 class _$_HourlyWeather implements _HourlyWeather {
   _$_HourlyWeather(
-      {required this.dt,
-      required this.temp,
-      @JsonKey(name: 'feels_like') required this.feelsLike,
-      required this.pressure,
-      required this.humidity,
-      required this.uvi,
-      required this.clouds,
-      required this.visibility,
-      @JsonKey(name: 'dew_point') required this.dewPoint,
-      @JsonKey(name: 'wind_speed') required this.windSpeed,
-      @JsonKey(name: 'wind_deg') required this.windDeg,
-      @JsonKey(name: 'wind_gust') required this.windGust,
-      required this.weather,
-      required this.pop});
+      {@HiveField(0) required this.dt,
+      @HiveField(1) required this.temp,
+      @HiveField(2) @JsonKey(name: 'feels_like') required this.feelsLike,
+      @HiveField(3) required this.pressure,
+      @HiveField(4) required this.humidity,
+      @HiveField(5) required this.uvi,
+      @HiveField(6) required this.clouds,
+      @HiveField(7) required this.visibility,
+      @HiveField(8) @JsonKey(name: 'dew_point') required this.dewPoint,
+      @HiveField(9) @JsonKey(name: 'wind_speed') required this.windSpeed,
+      @HiveField(10) @JsonKey(name: 'wind_deg') required this.windDeg,
+      @HiveField(11) @JsonKey(name: 'wind_gust') required this.windGust,
+      @HiveField(12) required this.weather,
+      @HiveField(13) required this.pop});
 
   factory _$_HourlyWeather.fromJson(Map<String, dynamic> json) =>
       _$$_HourlyWeatherFromJson(json);
 
   @override
+  @HiveField(0)
   final int dt;
   @override
+  @HiveField(1)
   final double temp;
   @override
+  @HiveField(2)
   @JsonKey(name: 'feels_like')
   final double feelsLike;
   @override
+  @HiveField(3)
   final int pressure;
   @override
+  @HiveField(4)
   final int humidity;
   @override
+  @HiveField(5)
   final double uvi;
   @override
+  @HiveField(6)
   final double clouds;
   @override
+  @HiveField(7)
   final double visibility;
   @override
+  @HiveField(8)
   @JsonKey(name: 'dew_point')
   final double dewPoint;
   @override
+  @HiveField(9)
   @JsonKey(name: 'wind_speed')
   final double windSpeed;
   @override
+  @HiveField(10)
   @JsonKey(name: 'wind_deg')
   final double windDeg;
   @override
+  @HiveField(11)
   @JsonKey(name: 'wind_gust')
   final double windGust;
   @override
+  @HiveField(12)
   final List<WeatherInfo> weather;
   @override
+  @HiveField(13)
   final double pop;
 
   @override
@@ -432,56 +461,70 @@ class _$_HourlyWeather implements _HourlyWeather {
 
 abstract class _HourlyWeather implements HourlyWeather {
   factory _HourlyWeather(
-      {required int dt,
-      required double temp,
-      @JsonKey(name: 'feels_like') required double feelsLike,
-      required int pressure,
-      required int humidity,
-      required double uvi,
-      required double clouds,
-      required double visibility,
-      @JsonKey(name: 'dew_point') required double dewPoint,
-      @JsonKey(name: 'wind_speed') required double windSpeed,
-      @JsonKey(name: 'wind_deg') required double windDeg,
-      @JsonKey(name: 'wind_gust') required double windGust,
-      required List<WeatherInfo> weather,
-      required double pop}) = _$_HourlyWeather;
+      {@HiveField(0) required int dt,
+      @HiveField(1) required double temp,
+      @HiveField(2) @JsonKey(name: 'feels_like') required double feelsLike,
+      @HiveField(3) required int pressure,
+      @HiveField(4) required int humidity,
+      @HiveField(5) required double uvi,
+      @HiveField(6) required double clouds,
+      @HiveField(7) required double visibility,
+      @HiveField(8) @JsonKey(name: 'dew_point') required double dewPoint,
+      @HiveField(9) @JsonKey(name: 'wind_speed') required double windSpeed,
+      @HiveField(10) @JsonKey(name: 'wind_deg') required double windDeg,
+      @HiveField(11) @JsonKey(name: 'wind_gust') required double windGust,
+      @HiveField(12) required List<WeatherInfo> weather,
+      @HiveField(13) required double pop}) = _$_HourlyWeather;
 
   factory _HourlyWeather.fromJson(Map<String, dynamic> json) =
       _$_HourlyWeather.fromJson;
 
   @override
+  @HiveField(0)
   int get dt;
   @override
+  @HiveField(1)
   double get temp;
   @override
+  @HiveField(2)
   @JsonKey(name: 'feels_like')
   double get feelsLike;
   @override
+  @HiveField(3)
   int get pressure;
   @override
+  @HiveField(4)
   int get humidity;
   @override
+  @HiveField(5)
   double get uvi;
   @override
+  @HiveField(6)
   double get clouds;
   @override
+  @HiveField(7)
   double get visibility;
   @override
+  @HiveField(8)
   @JsonKey(name: 'dew_point')
   double get dewPoint;
   @override
+  @HiveField(9)
   @JsonKey(name: 'wind_speed')
   double get windSpeed;
   @override
+  @HiveField(10)
   @JsonKey(name: 'wind_deg')
   double get windDeg;
   @override
+  @HiveField(11)
   @JsonKey(name: 'wind_gust')
   double get windGust;
   @override
+  @HiveField(12)
   List<WeatherInfo> get weather;
   @override
+  @HiveField(13)
   double get pop;
   @override
   @JsonKey(ignore: true)

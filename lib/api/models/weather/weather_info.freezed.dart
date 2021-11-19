@@ -22,10 +22,10 @@ class _$WeatherInfoTearOff {
   const _$WeatherInfoTearOff();
 
   _WeatherInfo call(
-      {required int id,
-      required String main,
-      required String description,
-      required String icon}) {
+      {@HiveField(0) required int id,
+      @HiveField(1) required String main,
+      @HiveField(2) required String description,
+      @HiveField(3) required String icon}) {
     return _WeatherInfo(
       id: id,
       main: main,
@@ -44,9 +44,13 @@ const $WeatherInfo = _$WeatherInfoTearOff();
 
 /// @nodoc
 mixin _$WeatherInfo {
+  @HiveField(0)
   int get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get main => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get description => throw _privateConstructorUsedError;
+  @HiveField(3)
   String get icon => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -60,7 +64,11 @@ abstract class $WeatherInfoCopyWith<$Res> {
   factory $WeatherInfoCopyWith(
           WeatherInfo value, $Res Function(WeatherInfo) then) =
       _$WeatherInfoCopyWithImpl<$Res>;
-  $Res call({int id, String main, String description, String icon});
+  $Res call(
+      {@HiveField(0) int id,
+      @HiveField(1) String main,
+      @HiveField(2) String description,
+      @HiveField(3) String icon});
 }
 
 /// @nodoc
@@ -106,7 +114,11 @@ abstract class _$WeatherInfoCopyWith<$Res>
           _WeatherInfo value, $Res Function(_WeatherInfo) then) =
       __$WeatherInfoCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String main, String description, String icon});
+  $Res call(
+      {@HiveField(0) int id,
+      @HiveField(1) String main,
+      @HiveField(2) String description,
+      @HiveField(3) String icon});
 }
 
 /// @nodoc
@@ -149,23 +161,28 @@ class __$WeatherInfoCopyWithImpl<$Res> extends _$WeatherInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 3, adapterName: 'WeatherInfoAdapter')
 class _$_WeatherInfo implements _WeatherInfo {
   _$_WeatherInfo(
-      {required this.id,
-      required this.main,
-      required this.description,
-      required this.icon});
+      {@HiveField(0) required this.id,
+      @HiveField(1) required this.main,
+      @HiveField(2) required this.description,
+      @HiveField(3) required this.icon});
 
   factory _$_WeatherInfo.fromJson(Map<String, dynamic> json) =>
       _$$_WeatherInfoFromJson(json);
 
   @override
+  @HiveField(0)
   final int id;
   @override
+  @HiveField(1)
   final String main;
   @override
+  @HiveField(2)
   final String description;
   @override
+  @HiveField(3)
   final String icon;
 
   @override
@@ -201,21 +218,25 @@ class _$_WeatherInfo implements _WeatherInfo {
 
 abstract class _WeatherInfo implements WeatherInfo {
   factory _WeatherInfo(
-      {required int id,
-      required String main,
-      required String description,
-      required String icon}) = _$_WeatherInfo;
+      {@HiveField(0) required int id,
+      @HiveField(1) required String main,
+      @HiveField(2) required String description,
+      @HiveField(3) required String icon}) = _$_WeatherInfo;
 
   factory _WeatherInfo.fromJson(Map<String, dynamic> json) =
       _$_WeatherInfo.fromJson;
 
   @override
+  @HiveField(0)
   int get id;
   @override
+  @HiveField(1)
   String get main;
   @override
+  @HiveField(2)
   String get description;
   @override
+  @HiveField(3)
   String get icon;
   @override
   @JsonKey(ignore: true)

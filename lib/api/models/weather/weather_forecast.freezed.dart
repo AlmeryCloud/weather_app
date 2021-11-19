@@ -22,12 +22,19 @@ class _$WeatherForecastTearOff {
   const _$WeatherForecastTearOff();
 
   _WeatherForecast call(
-      {required double lat,
-      required double lon,
-      required String timezone,
-      @JsonKey(name: 'timezone_offset') required int timezoneOffset,
-      required List<DailyWeather>? daily,
-      required List<HourlyWeather>? hourly}) {
+      {@HiveField(0)
+          required double lat,
+      @HiveField(1)
+          required double lon,
+      @HiveField(2)
+          required String timezone,
+      @HiveField(3)
+      @JsonKey(name: 'timezone_offset')
+          required int timezoneOffset,
+      @HiveField(4)
+          required List<DailyWeather>? daily,
+      @HiveField(5)
+          required List<HourlyWeather>? hourly}) {
     return _WeatherForecast(
       lat: lat,
       lon: lon,
@@ -48,12 +55,18 @@ const $WeatherForecast = _$WeatherForecastTearOff();
 
 /// @nodoc
 mixin _$WeatherForecast {
+  @HiveField(0)
   double get lat => throw _privateConstructorUsedError;
+  @HiveField(1)
   double get lon => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get timezone => throw _privateConstructorUsedError;
+  @HiveField(3)
   @JsonKey(name: 'timezone_offset')
   int get timezoneOffset => throw _privateConstructorUsedError;
+  @HiveField(4)
   List<DailyWeather>? get daily => throw _privateConstructorUsedError;
+  @HiveField(5)
   List<HourlyWeather>? get hourly => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -68,12 +81,12 @@ abstract class $WeatherForecastCopyWith<$Res> {
           WeatherForecast value, $Res Function(WeatherForecast) then) =
       _$WeatherForecastCopyWithImpl<$Res>;
   $Res call(
-      {double lat,
-      double lon,
-      String timezone,
-      @JsonKey(name: 'timezone_offset') int timezoneOffset,
-      List<DailyWeather>? daily,
-      List<HourlyWeather>? hourly});
+      {@HiveField(0) double lat,
+      @HiveField(1) double lon,
+      @HiveField(2) String timezone,
+      @HiveField(3) @JsonKey(name: 'timezone_offset') int timezoneOffset,
+      @HiveField(4) List<DailyWeather>? daily,
+      @HiveField(5) List<HourlyWeather>? hourly});
 }
 
 /// @nodoc
@@ -131,12 +144,12 @@ abstract class _$WeatherForecastCopyWith<$Res>
       __$WeatherForecastCopyWithImpl<$Res>;
   @override
   $Res call(
-      {double lat,
-      double lon,
-      String timezone,
-      @JsonKey(name: 'timezone_offset') int timezoneOffset,
-      List<DailyWeather>? daily,
-      List<HourlyWeather>? hourly});
+      {@HiveField(0) double lat,
+      @HiveField(1) double lon,
+      @HiveField(2) String timezone,
+      @HiveField(3) @JsonKey(name: 'timezone_offset') int timezoneOffset,
+      @HiveField(4) List<DailyWeather>? daily,
+      @HiveField(5) List<HourlyWeather>? hourly});
 }
 
 /// @nodoc
@@ -190,30 +203,44 @@ class __$WeatherForecastCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 0, adapterName: 'WeatherForecastAdapter')
 class _$_WeatherForecast implements _WeatherForecast {
   _$_WeatherForecast(
-      {required this.lat,
-      required this.lon,
-      required this.timezone,
-      @JsonKey(name: 'timezone_offset') required this.timezoneOffset,
-      required this.daily,
-      required this.hourly});
+      {@HiveField(0)
+          required this.lat,
+      @HiveField(1)
+          required this.lon,
+      @HiveField(2)
+          required this.timezone,
+      @HiveField(3)
+      @JsonKey(name: 'timezone_offset')
+          required this.timezoneOffset,
+      @HiveField(4)
+          required this.daily,
+      @HiveField(5)
+          required this.hourly});
 
   factory _$_WeatherForecast.fromJson(Map<String, dynamic> json) =>
       _$$_WeatherForecastFromJson(json);
 
   @override
+  @HiveField(0)
   final double lat;
   @override
+  @HiveField(1)
   final double lon;
   @override
+  @HiveField(2)
   final String timezone;
   @override
+  @HiveField(3)
   @JsonKey(name: 'timezone_offset')
   final int timezoneOffset;
   @override
+  @HiveField(4)
   final List<DailyWeather>? daily;
   @override
+  @HiveField(5)
   final List<HourlyWeather>? hourly;
 
   @override
@@ -259,28 +286,41 @@ class _$_WeatherForecast implements _WeatherForecast {
 
 abstract class _WeatherForecast implements WeatherForecast {
   factory _WeatherForecast(
-      {required double lat,
-      required double lon,
-      required String timezone,
-      @JsonKey(name: 'timezone_offset') required int timezoneOffset,
-      required List<DailyWeather>? daily,
-      required List<HourlyWeather>? hourly}) = _$_WeatherForecast;
+      {@HiveField(0)
+          required double lat,
+      @HiveField(1)
+          required double lon,
+      @HiveField(2)
+          required String timezone,
+      @HiveField(3)
+      @JsonKey(name: 'timezone_offset')
+          required int timezoneOffset,
+      @HiveField(4)
+          required List<DailyWeather>? daily,
+      @HiveField(5)
+          required List<HourlyWeather>? hourly}) = _$_WeatherForecast;
 
   factory _WeatherForecast.fromJson(Map<String, dynamic> json) =
       _$_WeatherForecast.fromJson;
 
   @override
+  @HiveField(0)
   double get lat;
   @override
+  @HiveField(1)
   double get lon;
   @override
+  @HiveField(2)
   String get timezone;
   @override
+  @HiveField(3)
   @JsonKey(name: 'timezone_offset')
   int get timezoneOffset;
   @override
+  @HiveField(4)
   List<DailyWeather>? get daily;
   @override
+  @HiveField(5)
   List<HourlyWeather>? get hourly;
   @override
   @JsonKey(ignore: true)

@@ -5,5 +5,20 @@
     },
     "min": "мин",
     "max": "макс",
-    "temperature": "температура"
+    "temperature": "температура",
+    "default_country": "Украина",
+    "default_city": "Киев",
+    "weather_info": {
+        "sunrise": "Восход солнца",
+        "sunset": "Заход солнца",
+        "moonrise": "Восход луны",
+        "moonset": "Заход луны",
+        "moon_phase": "Фаза луны",
+        "pressure": "Давление",
+        "humidity": "Влажность",
+        "wind_speed": "Скорость ветра",
+        "wind_deg": "Направление ветра",
+        "wind_gust": "Порыв ветра",
+        "uvi": "Ультрафиолетовый индекс"
+    }
 }

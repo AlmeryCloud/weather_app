@@ -1,3 +1,4 @@
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:lumberdash/lumberdash.dart';
 
@@ -28,6 +29,20 @@ class GeolocatorService {
     } catch (error, stack) {
       logError(error, stacktrace: stack);
       rethrow;
+    }
+  }
+
+  Future<Placemark?> getLocationInfo({
+    required double lat,
+    required double lon,
+  }) async {
+    try {
+      final placemarks = await GeocodingPlatform.instance
+          .placemarkFromCoordinates(lat, lon)
+          .timeout(const Duration(seconds: 3));
+      return placemarks.first;
+    } catch (error, stack) {
+      logError(error, stacktrace: stack);
     }
   }
 }

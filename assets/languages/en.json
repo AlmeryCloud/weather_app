@@ -5,5 +5,20 @@
     },
     "min": "min",
     "max": "max",
-    "temperature": "temp"
+    "temperature": "temp",
+    "default_country": "Ukraine",
+    "default_city": "Kiev",
+    "weather_info": {
+        "sunrise": "Sunrise",
+        "sunset": "Sunset",
+        "moonrise": "Moonrise",
+        "moonset": "Moonset",
+        "moon_phase": "Moon phase",
+        "pressure": "Pressure",
+        "humidity": "Humidity",
+        "wind_speed": "Wind speed",
+        "wind_deg": "Wind degree",
+        "wind_gust": "Wind gust",
+        "uvi": "Ultraviolet"
+    }
 }

@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:weather_app/blocs/weather_bloc/weather_bloc.dart';
 import 'package:weather_app/interfaces/service_locator.dart';
 import 'package:weather_app/providers/repository_provider.dart';
+import 'package:weather_app/repositories/geolocation_repository.dart';
 import 'package:weather_app/repositories/weather_repository.dart';
 
 class BlocFactory implements ServiceLocator {
@@ -18,7 +19,10 @@ class BlocFactory implements ServiceLocator {
     await _getIt.reset();
 
     _getIt.registerLazySingleton(
-      () => WeatherBloc(_repositoryProvider.get<WeatherRepository>()),
+      () => WeatherBloc(
+        _repositoryProvider.get<WeatherRepository>(),
+        _repositoryProvider.get<GeolocationRepository>(),
+      ),
     );
 
     return _getIt.allReady();

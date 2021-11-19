@@ -1,48 +1,75 @@
-import 'package:geolocator/geolocator.dart';
-import 'package:weather_app/api/models/weather_forecast.dart';
+import 'package:lumberdash/lumberdash.dart';
+import 'package:weather_app/api/models/weather/weather_forecast.dart';
 import 'package:weather_app/api/weather_api_client.dart';
+import 'package:weather_app/consts/hive_consts.dart';
 import 'package:weather_app/enums/weather_forecast_type.dart';
-import 'package:weather_app/services/geolocator_service.dart';
+import 'package:weather_app/services/hive_service.dart';
 
 class WeatherRepository {
   final WeatherApiClient _weatherApiClient;
-  final GeolocatorService _geolocatorService;
+  final HiveService _hiveService;
 
-  WeatherRepository(this._weatherApiClient, this._geolocatorService);
+  WeatherRepository(
+    this._weatherApiClient,
+    this._hiveService,
+  );
 
   WeatherForecast? _dailyWeatherForecast;
   WeatherForecast? _hourlyWeatherForecast;
-  Position? _lastReceivedPosition;
 
   WeatherForecast? get dailyWeatherForecast => _dailyWeatherForecast;
   WeatherForecast? get hourlyWeatherForecast => _hourlyWeatherForecast;
-  Position? get lastReceivedPosition => _lastReceivedPosition;
 
   Future<WeatherForecast?> fetchWeatherForecast({
+    required double lat,
+    required double lon,
     WeatherForecastType type = WeatherForecastType.daily,
   }) async {
-    final position = await _geolocatorService.determinePosition();
-    // Kiev coords as default city
-    final lat = position?.latitude ?? 50.450001;
-    final lon = position?.longitude ?? 30.523333;
+    try {
+      switch (type) {
+        case WeatherForecastType.daily:
+          _dailyWeatherForecast = await _weatherApiClient.getDailyForecast(
+            lat: lat,
+            lon: lon,
+          );
 
-    if (position != null) {
-      _lastReceivedPosition = position;
-    }
+          if (_dailyWeatherForecast != null) {
+            await _hiveService.storeObject(
+              key: HiveConsts.dailyWeatherKey,
+              boxName: HiveConsts.dailyWeatherBoxName,
+              object: _dailyWeatherForecast,
+            );
+          } else {
+            _dailyWeatherForecast =
+                await _hiveService.getObject<WeatherForecast>(
+              key: HiveConsts.dailyWeatherKey,
+              boxName: HiveConsts.dailyWeatherBoxName,
+            );
+          }
+          return _dailyWeatherForecast;
+        case WeatherForecastType.hourly:
+          _hourlyWeatherForecast = await _weatherApiClient.getHourlyForecast(
+            lat: lat,
+            lon: lon,
+          );
 
-    switch (type) {
-      case WeatherForecastType.daily:
-        _dailyWeatherForecast = await _weatherApiClient.getDailyForecast(
-          lat: lat,
-          lon: lon,
-        );
-        return _dailyWeatherForecast;
-      case WeatherForecastType.hourly:
-        _hourlyWeatherForecast = await _weatherApiClient.getHourlyForecast(
-          lat: lat,
-          lon: lon,
-        );
-        return _hourlyWeatherForecast;
+          if (_hourlyWeatherForecast != null) {
+            await _hiveService.storeObject(
+              key: HiveConsts.hourlyWeatherKey,
+              boxName: HiveConsts.hourlyWeatherBoxName,
+              object: _hourlyWeatherForecast,
+            );
+          } else {
+            _hourlyWeatherForecast =
+                await _hiveService.getObject<WeatherForecast>(
+              key: HiveConsts.hourlyWeatherKey,
+              boxName: HiveConsts.hourlyWeatherBoxName,
+            );
+          }
+          return _hourlyWeatherForecast;
+      }
+    } catch (error, stack) {
+      logError(error, stacktrace: stack);
     }
   }
 }

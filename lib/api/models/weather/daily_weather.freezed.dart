@@ -22,24 +22,24 @@ class _$DailyWeatherTearOff {
   const _$DailyWeatherTearOff();
 
   _DailyWeather call(
-      {required int dt,
-      required int sunrise,
-      required int sunset,
-      required int moonrise,
-      required int moonset,
-      @JsonKey(name: 'moon_phase') required double moonPhase,
-      required Temperature temp,
-      @JsonKey(name: 'feels_like') required Temperature feelsLike,
-      required int pressure,
-      required int humidity,
-      @JsonKey(name: 'dew_point') required double dewPoint,
-      @JsonKey(name: 'wind_speed') required double windSpeed,
-      @JsonKey(name: 'wind_deg') required double windDeg,
-      @JsonKey(name: 'wind_gust') required double windGust,
-      required List<WeatherInfo> weather,
-      required double clouds,
-      required double pop,
-      required double uvi}) {
+      {@HiveField(0) required int dt,
+      @HiveField(1) required int sunrise,
+      @HiveField(2) required int sunset,
+      @HiveField(3) required int moonrise,
+      @HiveField(4) required int moonset,
+      @HiveField(5) @JsonKey(name: 'moon_phase') required double moonPhase,
+      @HiveField(6) required Temperature temp,
+      @HiveField(7) @JsonKey(name: 'feels_like') required Temperature feelsLike,
+      @HiveField(8) required int pressure,
+      @HiveField(9) required int humidity,
+      @HiveField(10) @JsonKey(name: 'dew_point') required double dewPoint,
+      @HiveField(11) @JsonKey(name: 'wind_speed') required double windSpeed,
+      @HiveField(12) @JsonKey(name: 'wind_deg') required double windDeg,
+      @HiveField(13) @JsonKey(name: 'wind_gust') required double windGust,
+      @HiveField(14) required List<WeatherInfo> weather,
+      @HiveField(15) required double clouds,
+      @HiveField(16) required double pop,
+      @HiveField(17) required double uvi}) {
     return _DailyWeather(
       dt: dt,
       sunrise: sunrise,
@@ -72,29 +72,47 @@ const $DailyWeather = _$DailyWeatherTearOff();
 
 /// @nodoc
 mixin _$DailyWeather {
+  @HiveField(0)
   int get dt => throw _privateConstructorUsedError;
+  @HiveField(1)
   int get sunrise => throw _privateConstructorUsedError;
+  @HiveField(2)
   int get sunset => throw _privateConstructorUsedError;
+  @HiveField(3)
   int get moonrise => throw _privateConstructorUsedError;
+  @HiveField(4)
   int get moonset => throw _privateConstructorUsedError;
+  @HiveField(5)
   @JsonKey(name: 'moon_phase')
   double get moonPhase => throw _privateConstructorUsedError;
+  @HiveField(6)
   Temperature get temp => throw _privateConstructorUsedError;
+  @HiveField(7)
   @JsonKey(name: 'feels_like')
   Temperature get feelsLike => throw _privateConstructorUsedError;
+  @HiveField(8)
   int get pressure => throw _privateConstructorUsedError;
+  @HiveField(9)
   int get humidity => throw _privateConstructorUsedError;
+  @HiveField(10)
   @JsonKey(name: 'dew_point')
   double get dewPoint => throw _privateConstructorUsedError;
+  @HiveField(11)
   @JsonKey(name: 'wind_speed')
   double get windSpeed => throw _privateConstructorUsedError;
+  @HiveField(12)
   @JsonKey(name: 'wind_deg')
   double get windDeg => throw _privateConstructorUsedError;
+  @HiveField(13)
   @JsonKey(name: 'wind_gust')
   double get windGust => throw _privateConstructorUsedError;
+  @HiveField(14)
   List<WeatherInfo> get weather => throw _privateConstructorUsedError;
+  @HiveField(15)
   double get clouds => throw _privateConstructorUsedError;
+  @HiveField(16)
   double get pop => throw _privateConstructorUsedError;
+  @HiveField(17)
   double get uvi => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -109,24 +127,24 @@ abstract class $DailyWeatherCopyWith<$Res> {
           DailyWeather value, $Res Function(DailyWeather) then) =
       _$DailyWeatherCopyWithImpl<$Res>;
   $Res call(
-      {int dt,
-      int sunrise,
-      int sunset,
-      int moonrise,
-      int moonset,
-      @JsonKey(name: 'moon_phase') double moonPhase,
-      Temperature temp,
-      @JsonKey(name: 'feels_like') Temperature feelsLike,
-      int pressure,
-      int humidity,
-      @JsonKey(name: 'dew_point') double dewPoint,
-      @JsonKey(name: 'wind_speed') double windSpeed,
-      @JsonKey(name: 'wind_deg') double windDeg,
-      @JsonKey(name: 'wind_gust') double windGust,
-      List<WeatherInfo> weather,
-      double clouds,
-      double pop,
-      double uvi});
+      {@HiveField(0) int dt,
+      @HiveField(1) int sunrise,
+      @HiveField(2) int sunset,
+      @HiveField(3) int moonrise,
+      @HiveField(4) int moonset,
+      @HiveField(5) @JsonKey(name: 'moon_phase') double moonPhase,
+      @HiveField(6) Temperature temp,
+      @HiveField(7) @JsonKey(name: 'feels_like') Temperature feelsLike,
+      @HiveField(8) int pressure,
+      @HiveField(9) int humidity,
+      @HiveField(10) @JsonKey(name: 'dew_point') double dewPoint,
+      @HiveField(11) @JsonKey(name: 'wind_speed') double windSpeed,
+      @HiveField(12) @JsonKey(name: 'wind_deg') double windDeg,
+      @HiveField(13) @JsonKey(name: 'wind_gust') double windGust,
+      @HiveField(14) List<WeatherInfo> weather,
+      @HiveField(15) double clouds,
+      @HiveField(16) double pop,
+      @HiveField(17) double uvi});
 
   $TemperatureCopyWith<$Res> get temp;
   $TemperatureCopyWith<$Res> get feelsLike;
@@ -260,24 +278,24 @@ abstract class _$DailyWeatherCopyWith<$Res>
       __$DailyWeatherCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int dt,
-      int sunrise,
-      int sunset,
-      int moonrise,
-      int moonset,
-      @JsonKey(name: 'moon_phase') double moonPhase,
-      Temperature temp,
-      @JsonKey(name: 'feels_like') Temperature feelsLike,
-      int pressure,
-      int humidity,
-      @JsonKey(name: 'dew_point') double dewPoint,
-      @JsonKey(name: 'wind_speed') double windSpeed,
-      @JsonKey(name: 'wind_deg') double windDeg,
-      @JsonKey(name: 'wind_gust') double windGust,
-      List<WeatherInfo> weather,
-      double clouds,
-      double pop,
-      double uvi});
+      {@HiveField(0) int dt,
+      @HiveField(1) int sunrise,
+      @HiveField(2) int sunset,
+      @HiveField(3) int moonrise,
+      @HiveField(4) int moonset,
+      @HiveField(5) @JsonKey(name: 'moon_phase') double moonPhase,
+      @HiveField(6) Temperature temp,
+      @HiveField(7) @JsonKey(name: 'feels_like') Temperature feelsLike,
+      @HiveField(8) int pressure,
+      @HiveField(9) int humidity,
+      @HiveField(10) @JsonKey(name: 'dew_point') double dewPoint,
+      @HiveField(11) @JsonKey(name: 'wind_speed') double windSpeed,
+      @HiveField(12) @JsonKey(name: 'wind_deg') double windDeg,
+      @HiveField(13) @JsonKey(name: 'wind_gust') double windGust,
+      @HiveField(14) List<WeatherInfo> weather,
+      @HiveField(15) double clouds,
+      @HiveField(16) double pop,
+      @HiveField(17) double uvi});
 
   @override
   $TemperatureCopyWith<$Res> get temp;
@@ -395,71 +413,90 @@ class __$DailyWeatherCopyWithImpl<$Res> extends _$DailyWeatherCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 1, adapterName: 'DailyWeatherAdapter')
 class _$_DailyWeather implements _DailyWeather {
   _$_DailyWeather(
-      {required this.dt,
-      required this.sunrise,
-      required this.sunset,
-      required this.moonrise,
-      required this.moonset,
-      @JsonKey(name: 'moon_phase') required this.moonPhase,
-      required this.temp,
-      @JsonKey(name: 'feels_like') required this.feelsLike,
-      required this.pressure,
-      required this.humidity,
-      @JsonKey(name: 'dew_point') required this.dewPoint,
-      @JsonKey(name: 'wind_speed') required this.windSpeed,
-      @JsonKey(name: 'wind_deg') required this.windDeg,
-      @JsonKey(name: 'wind_gust') required this.windGust,
-      required this.weather,
-      required this.clouds,
-      required this.pop,
-      required this.uvi});
+      {@HiveField(0) required this.dt,
+      @HiveField(1) required this.sunrise,
+      @HiveField(2) required this.sunset,
+      @HiveField(3) required this.moonrise,
+      @HiveField(4) required this.moonset,
+      @HiveField(5) @JsonKey(name: 'moon_phase') required this.moonPhase,
+      @HiveField(6) required this.temp,
+      @HiveField(7) @JsonKey(name: 'feels_like') required this.feelsLike,
+      @HiveField(8) required this.pressure,
+      @HiveField(9) required this.humidity,
+      @HiveField(10) @JsonKey(name: 'dew_point') required this.dewPoint,
+      @HiveField(11) @JsonKey(name: 'wind_speed') required this.windSpeed,
+      @HiveField(12) @JsonKey(name: 'wind_deg') required this.windDeg,
+      @HiveField(13) @JsonKey(name: 'wind_gust') required this.windGust,
+      @HiveField(14) required this.weather,
+      @HiveField(15) required this.clouds,
+      @HiveField(16) required this.pop,
+      @HiveField(17) required this.uvi});
 
   factory _$_DailyWeather.fromJson(Map<String, dynamic> json) =>
       _$$_DailyWeatherFromJson(json);
 
   @override
+  @HiveField(0)
   final int dt;
   @override
+  @HiveField(1)
   final int sunrise;
   @override
+  @HiveField(2)
   final int sunset;
   @override
+  @HiveField(3)
   final int moonrise;
   @override
+  @HiveField(4)
   final int moonset;
   @override
+  @HiveField(5)
   @JsonKey(name: 'moon_phase')
   final double moonPhase;
   @override
+  @HiveField(6)
   final Temperature temp;
   @override
+  @HiveField(7)
   @JsonKey(name: 'feels_like')
   final Temperature feelsLike;
   @override
+  @HiveField(8)
   final int pressure;
   @override
+  @HiveField(9)
   final int humidity;
   @override
+  @HiveField(10)
   @JsonKey(name: 'dew_point')
   final double dewPoint;
   @override
+  @HiveField(11)
   @JsonKey(name: 'wind_speed')
   final double windSpeed;
   @override
+  @HiveField(12)
   @JsonKey(name: 'wind_deg')
   final double windDeg;
   @override
+  @HiveField(13)
   @JsonKey(name: 'wind_gust')
   final double windGust;
   @override
+  @HiveField(14)
   final List<WeatherInfo> weather;
   @override
+  @HiveField(15)
   final double clouds;
   @override
+  @HiveField(16)
   final double pop;
   @override
+  @HiveField(17)
   final double uvi;
 
   @override
@@ -535,69 +572,87 @@ class _$_DailyWeather implements _DailyWeather {
 
 abstract class _DailyWeather implements DailyWeather {
   factory _DailyWeather(
-      {required int dt,
-      required int sunrise,
-      required int sunset,
-      required int moonrise,
-      required int moonset,
-      @JsonKey(name: 'moon_phase') required double moonPhase,
-      required Temperature temp,
-      @JsonKey(name: 'feels_like') required Temperature feelsLike,
-      required int pressure,
-      required int humidity,
-      @JsonKey(name: 'dew_point') required double dewPoint,
-      @JsonKey(name: 'wind_speed') required double windSpeed,
-      @JsonKey(name: 'wind_deg') required double windDeg,
-      @JsonKey(name: 'wind_gust') required double windGust,
-      required List<WeatherInfo> weather,
-      required double clouds,
-      required double pop,
-      required double uvi}) = _$_DailyWeather;
+      {@HiveField(0) required int dt,
+      @HiveField(1) required int sunrise,
+      @HiveField(2) required int sunset,
+      @HiveField(3) required int moonrise,
+      @HiveField(4) required int moonset,
+      @HiveField(5) @JsonKey(name: 'moon_phase') required double moonPhase,
+      @HiveField(6) required Temperature temp,
+      @HiveField(7) @JsonKey(name: 'feels_like') required Temperature feelsLike,
+      @HiveField(8) required int pressure,
+      @HiveField(9) required int humidity,
+      @HiveField(10) @JsonKey(name: 'dew_point') required double dewPoint,
+      @HiveField(11) @JsonKey(name: 'wind_speed') required double windSpeed,
+      @HiveField(12) @JsonKey(name: 'wind_deg') required double windDeg,
+      @HiveField(13) @JsonKey(name: 'wind_gust') required double windGust,
+      @HiveField(14) required List<WeatherInfo> weather,
+      @HiveField(15) required double clouds,
+      @HiveField(16) required double pop,
+      @HiveField(17) required double uvi}) = _$_DailyWeather;
 
   factory _DailyWeather.fromJson(Map<String, dynamic> json) =
       _$_DailyWeather.fromJson;
 
   @override
+  @HiveField(0)
   int get dt;
   @override
+  @HiveField(1)
   int get sunrise;
   @override
+  @HiveField(2)
   int get sunset;
   @override
+  @HiveField(3)
   int get moonrise;
   @override
+  @HiveField(4)
   int get moonset;
   @override
+  @HiveField(5)
   @JsonKey(name: 'moon_phase')
   double get moonPhase;
   @override
+  @HiveField(6)
   Temperature get temp;
   @override
+  @HiveField(7)
   @JsonKey(name: 'feels_like')
   Temperature get feelsLike;
   @override
+  @HiveField(8)
   int get pressure;
   @override
+  @HiveField(9)
   int get humidity;
   @override
+  @HiveField(10)
   @JsonKey(name: 'dew_point')
   double get dewPoint;
   @override
+  @HiveField(11)
   @JsonKey(name: 'wind_speed')
   double get windSpeed;
   @override
+  @HiveField(12)
   @JsonKey(name: 'wind_deg')
   double get windDeg;
   @override
+  @HiveField(13)
   @JsonKey(name: 'wind_gust')
   double get windGust;
   @override
+  @HiveField(14)
   List<WeatherInfo> get weather;
   @override
+  @HiveField(15)
   double get clouds;
   @override
+  @HiveField(16)
   double get pop;
   @override
+  @HiveField(17)
   double get uvi;
   @override
   @JsonKey(ignore: true)

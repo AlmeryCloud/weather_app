@@ -3,12 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app/api/models/daily_weather.dart';
-import 'package:weather_app/api/models/hourly_weather.dart';
+import 'package:weather_app/api/models/weather/daily_weather.dart';
+import 'package:weather_app/api/models/weather/hourly_weather.dart';
 import 'package:weather_app/blocs/extensions/bloc_widget_extension.dart';
 import 'package:weather_app/blocs/weather_bloc/weather_bloc.dart';
 import 'package:weather_app/enums/weather_forecast_type.dart';
+import 'package:weather_app/navigation/models/weather_details_arguments.dart';
 import 'package:weather_app/widgets/common/app_dropdown_button.dart';
+import 'package:weather_app/widgets/home/weather_tile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -81,12 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   loadSuccess: (state) {
                     final weatherList = state.weatherForecast.daily ??
                         state.weatherForecast.hourly!;
-                    final placemark = state.placemark!;
+                    final locationInfo = state.locationInfo;
 
                     return Column(
                       children: [
                         Text(
-                          '${placemark.country}, ${placemark.locality}',
+                          '${locationInfo.country}, ${locationInfo.city}',
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontSize: 17.0,
@@ -108,28 +110,21 @@ class _HomeScreenState extends State<HomeScreen> {
                               final date = DateTime.fromMillisecondsSinceEpoch(
                                 weatherInfoItem.dt * 1000,
                               );
-                              final dt = DateFormat.yMMMMd().format(date);
+                              final stringDate =
+                                  DateFormat.yMMMMd().format(date);
 
-                              return ListTile(
-                                title: Text(
-                                  dt,
-                                  style: const TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.w500,
+                              return WeatherTile(
+                                title: stringDate,
+                                subtitle:
+                                    '${'min'.tr()}: ${temp.day}°C, ${'max'.tr()}: ${temp.max}°C',
+                                onTap: () => Navigator.of(context).pushNamed(
+                                  '/weather_details',
+                                  arguments: WeatherDetailsArguments(
+                                    locationInfo: locationInfo,
+                                    dailyWeather: weatherInfoItem,
+                                    stringDate: stringDate,
                                   ),
                                 ),
-                                subtitle: Text(
-                                  '${'min'.tr()}: ${temp.day}°C, ${'max'.tr()}: ${temp.max}°C',
-                                  style: const TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                tileColor: Colors.black12,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15.0),
-                                ),
-                                onTap: null,
                               );
                             } else if (weatherList is List<HourlyWeather>) {
                               final weatherInfoItem = weatherList[index];
@@ -137,29 +132,21 @@ class _HomeScreenState extends State<HomeScreen> {
                               final date = DateTime.fromMillisecondsSinceEpoch(
                                 weatherInfoItem.dt * 1000,
                               );
-                              final dt = DateFormat('HH:mm | dd MMMM, yyyy')
-                                  .format(date);
+                              final stringDate =
+                                  DateFormat('HH:mm | dd MMMM, yyyy')
+                                      .format(date);
 
-                              return ListTile(
-                                title: Text(
-                                  dt,
-                                  style: const TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.w500,
+                              return WeatherTile(
+                                title: stringDate,
+                                subtitle: '${'temperature'.tr()}: $temp°C',
+                                onTap: () => Navigator.of(context).pushNamed(
+                                  '/weather_details',
+                                  arguments: WeatherDetailsArguments(
+                                    locationInfo: locationInfo,
+                                    hourlyWeather: weatherInfoItem,
+                                    stringDate: stringDate,
                                   ),
                                 ),
-                                subtitle: Text(
-                                  '${'temperature'.tr()}: $temp°C',
-                                  style: const TextStyle(
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                tileColor: Colors.black12,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15.0),
-                                ),
-                                onTap: null,
                               );
                             } else {
                               return const SizedBox();

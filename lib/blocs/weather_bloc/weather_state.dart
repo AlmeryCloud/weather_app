@@ -6,7 +6,7 @@ class WeatherState extends BaseState with _$WeatherState {
   const factory WeatherState.loadInProgress() = WeatherLoadInProgressState;
   const factory WeatherState.loadSuccess({
     required WeatherForecast weatherForecast,
-    required Placemark? placemark,
+    required LocationInfo locationInfo,
   }) = WeatherLoadSuccessState;
   const factory WeatherState.loadFailure({
     String? error,

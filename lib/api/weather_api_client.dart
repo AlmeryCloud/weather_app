@@ -1,5 +1,5 @@
 import 'package:lumberdash/lumberdash.dart';
-import 'package:weather_app/api/models/weather_forecast.dart';
+import 'package:weather_app/api/models/weather/weather_forecast.dart';
 import 'package:weather_app/services/http_service.dart';
 
 class WeatherApiClient {
@@ -33,7 +33,6 @@ class WeatherApiClient {
       return WeatherForecast.fromJson(decodedJson);
     } catch (error) {
       logError(error);
-      rethrow;
     }
   }
 
@@ -58,7 +57,6 @@ class WeatherApiClient {
       return WeatherForecast.fromJson(decodedJson);
     } catch (error) {
       logError(error);
-      rethrow;
     }
   }
 }

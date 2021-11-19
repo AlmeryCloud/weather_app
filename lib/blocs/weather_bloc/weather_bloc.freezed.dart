@@ -249,10 +249,10 @@ class _$WeatherStateTearOff {
 
   WeatherLoadSuccessState loadSuccess(
       {required WeatherForecast weatherForecast,
-      required Placemark? placemark}) {
+      required LocationInfo locationInfo}) {
     return WeatherLoadSuccessState(
       weatherForecast: weatherForecast,
-      placemark: placemark,
+      locationInfo: locationInfo,
     );
   }
 
@@ -273,7 +273,7 @@ mixin _$WeatherState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(
-            WeatherForecast weatherForecast, Placemark? placemark)
+            WeatherForecast weatherForecast, LocationInfo locationInfo)
         loadSuccess,
     required TResult Function(String? error) loadFailure,
   }) =>
@@ -282,7 +282,8 @@ mixin _$WeatherState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
   }) =>
@@ -291,7 +292,8 @@ mixin _$WeatherState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
     required TResult orElse(),
@@ -384,7 +386,7 @@ class _$InitialWeatherState implements InitialWeatherState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(
-            WeatherForecast weatherForecast, Placemark? placemark)
+            WeatherForecast weatherForecast, LocationInfo locationInfo)
         loadSuccess,
     required TResult Function(String? error) loadFailure,
   }) {
@@ -396,7 +398,8 @@ class _$InitialWeatherState implements InitialWeatherState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
   }) {
@@ -408,7 +411,8 @@ class _$InitialWeatherState implements InitialWeatherState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
     required TResult orElse(),
@@ -507,7 +511,7 @@ class _$WeatherLoadInProgressState implements WeatherLoadInProgressState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(
-            WeatherForecast weatherForecast, Placemark? placemark)
+            WeatherForecast weatherForecast, LocationInfo locationInfo)
         loadSuccess,
     required TResult Function(String? error) loadFailure,
   }) {
@@ -519,7 +523,8 @@ class _$WeatherLoadInProgressState implements WeatherLoadInProgressState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
   }) {
@@ -531,7 +536,8 @@ class _$WeatherLoadInProgressState implements WeatherLoadInProgressState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
     required TResult orElse(),
@@ -589,9 +595,10 @@ abstract class $WeatherLoadSuccessStateCopyWith<$Res> {
   factory $WeatherLoadSuccessStateCopyWith(WeatherLoadSuccessState value,
           $Res Function(WeatherLoadSuccessState) then) =
       _$WeatherLoadSuccessStateCopyWithImpl<$Res>;
-  $Res call({WeatherForecast weatherForecast, Placemark? placemark});
+  $Res call({WeatherForecast weatherForecast, LocationInfo locationInfo});
 
   $WeatherForecastCopyWith<$Res> get weatherForecast;
+  $LocationInfoCopyWith<$Res> get locationInfo;
 }
 
 /// @nodoc
@@ -608,17 +615,17 @@ class _$WeatherLoadSuccessStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? weatherForecast = freezed,
-    Object? placemark = freezed,
+    Object? locationInfo = freezed,
   }) {
     return _then(WeatherLoadSuccessState(
       weatherForecast: weatherForecast == freezed
           ? _value.weatherForecast
           : weatherForecast // ignore: cast_nullable_to_non_nullable
               as WeatherForecast,
-      placemark: placemark == freezed
-          ? _value.placemark
-          : placemark // ignore: cast_nullable_to_non_nullable
-              as Placemark?,
+      locationInfo: locationInfo == freezed
+          ? _value.locationInfo
+          : locationInfo // ignore: cast_nullable_to_non_nullable
+              as LocationInfo,
     ));
   }
 
@@ -628,22 +635,29 @@ class _$WeatherLoadSuccessStateCopyWithImpl<$Res>
       return _then(_value.copyWith(weatherForecast: value));
     });
   }
+
+  @override
+  $LocationInfoCopyWith<$Res> get locationInfo {
+    return $LocationInfoCopyWith<$Res>(_value.locationInfo, (value) {
+      return _then(_value.copyWith(locationInfo: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$WeatherLoadSuccessState implements WeatherLoadSuccessState {
   const _$WeatherLoadSuccessState(
-      {required this.weatherForecast, required this.placemark});
+      {required this.weatherForecast, required this.locationInfo});
 
   @override
   final WeatherForecast weatherForecast;
   @override
-  final Placemark? placemark;
+  final LocationInfo locationInfo;
 
   @override
   String toString() {
-    return 'WeatherState.loadSuccess(weatherForecast: $weatherForecast, placemark: $placemark)';
+    return 'WeatherState.loadSuccess(weatherForecast: $weatherForecast, locationInfo: $locationInfo)';
   }
 
   @override
@@ -653,12 +667,12 @@ class _$WeatherLoadSuccessState implements WeatherLoadSuccessState {
             other is WeatherLoadSuccessState &&
             (identical(other.weatherForecast, weatherForecast) ||
                 other.weatherForecast == weatherForecast) &&
-            (identical(other.placemark, placemark) ||
-                other.placemark == placemark));
+            (identical(other.locationInfo, locationInfo) ||
+                other.locationInfo == locationInfo));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, weatherForecast, placemark);
+  int get hashCode => Object.hash(runtimeType, weatherForecast, locationInfo);
 
   @JsonKey(ignore: true)
   @override
@@ -672,11 +686,11 @@ class _$WeatherLoadSuccessState implements WeatherLoadSuccessState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(
-            WeatherForecast weatherForecast, Placemark? placemark)
+            WeatherForecast weatherForecast, LocationInfo locationInfo)
         loadSuccess,
     required TResult Function(String? error) loadFailure,
   }) {
-    return loadSuccess(weatherForecast, placemark);
+    return loadSuccess(weatherForecast, locationInfo);
   }
 
   @override
@@ -684,11 +698,12 @@ class _$WeatherLoadSuccessState implements WeatherLoadSuccessState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
   }) {
-    return loadSuccess?.call(weatherForecast, placemark);
+    return loadSuccess?.call(weatherForecast, locationInfo);
   }
 
   @override
@@ -696,13 +711,14 @@ class _$WeatherLoadSuccessState implements WeatherLoadSuccessState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(weatherForecast, placemark);
+      return loadSuccess(weatherForecast, locationInfo);
     }
     return orElse();
   }
@@ -748,10 +764,10 @@ class _$WeatherLoadSuccessState implements WeatherLoadSuccessState {
 abstract class WeatherLoadSuccessState implements WeatherState {
   const factory WeatherLoadSuccessState(
       {required WeatherForecast weatherForecast,
-      required Placemark? placemark}) = _$WeatherLoadSuccessState;
+      required LocationInfo locationInfo}) = _$WeatherLoadSuccessState;
 
   WeatherForecast get weatherForecast;
-  Placemark? get placemark;
+  LocationInfo get locationInfo;
   @JsonKey(ignore: true)
   $WeatherLoadSuccessStateCopyWith<WeatherLoadSuccessState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -825,7 +841,7 @@ class _$WeatherLoadFailureState implements WeatherLoadFailureState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(
-            WeatherForecast weatherForecast, Placemark? placemark)
+            WeatherForecast weatherForecast, LocationInfo locationInfo)
         loadSuccess,
     required TResult Function(String? error) loadFailure,
   }) {
@@ -837,7 +853,8 @@ class _$WeatherLoadFailureState implements WeatherLoadFailureState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
   }) {
@@ -849,7 +866,8 @@ class _$WeatherLoadFailureState implements WeatherLoadFailureState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherForecast weatherForecast, Placemark? placemark)?
+    TResult Function(
+            WeatherForecast weatherForecast, LocationInfo locationInfo)?
         loadSuccess,
     TResult Function(String? error)? loadFailure,
     required TResult orElse(),
