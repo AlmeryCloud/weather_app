@@ -38,6 +38,11 @@ class WeatherDetailsScreen extends StatelessWidget {
     );
 
     return [
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.sunset'.tr()}: $sunset',
+        style: _getWeatherInfoTextStyle,
+      ),
       const SizedBox(height: 20.0),
       Text(
         '${'weather_info.sunrise'.tr()}: $sunrise',
@@ -97,7 +102,53 @@ class WeatherDetailsScreen extends StatelessWidget {
   }
 
   List<Widget> _buildHourlyWeatherDeatils(HourlyWeather weather) {
-    return [];
+    return [
+      const SizedBox(height: 20.0),
+      Text(
+        '${'weather_info.temperature'.tr()}: ${weather.temp}',
+        style: _getWeatherInfoTextStyle,
+      ),
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.feels_like'.tr()}: ${weather.feelsLike}',
+        style: _getWeatherInfoTextStyle,
+      ),
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.visibility'.tr()}: ${weather.visibility}',
+        style: _getWeatherInfoTextStyle,
+      ),
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.pressure'.tr()}: ${weather.pressure}',
+        style: _getWeatherInfoTextStyle,
+      ),
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.humidity'.tr()}: ${weather.humidity}',
+        style: _getWeatherInfoTextStyle,
+      ),
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.wind_speed'.tr()}: ${weather.windSpeed}',
+        style: _getWeatherInfoTextStyle,
+      ),
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.wind_deg'.tr()}: ${weather.windDeg}',
+        style: _getWeatherInfoTextStyle,
+      ),
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.wind_gust'.tr()}: ${weather.windGust}',
+        style: _getWeatherInfoTextStyle,
+      ),
+      const SizedBox(height: 15.0),
+      Text(
+        '${'weather_info.uvi'.tr()}: ${weather.uvi}',
+        style: _getWeatherInfoTextStyle,
+      ),
+    ];
   }
 
   @override

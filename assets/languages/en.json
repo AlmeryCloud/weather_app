@@ -8,6 +8,7 @@
     "temperature": "temp",
     "default_country": "Ukraine",
     "default_city": "Kiev",
+    "error_message": "Something went wrong. Try again later",
     "weather_info": {
         "sunrise": "Sunrise",
         "sunset": "Sunset",
@@ -19,6 +20,9 @@
         "wind_speed": "Wind speed",
         "wind_deg": "Wind degree",
         "wind_gust": "Wind gust",
-        "uvi": "Ultraviolet"
+        "uvi": "Ultraviolet",
+        "temperature": "Temperature",
+        "feels_like": "Feels like",
+        "visibility": "Visibility"
     }
 }

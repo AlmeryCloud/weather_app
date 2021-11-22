@@ -79,7 +79,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   initial: (state) => const SizedBox(),
                   loadInProgress: (state) =>
                       const Center(child: CircularProgressIndicator()),
-                  loadFailure: (state) => const SizedBox(),
+                  loadFailure: (state) {
+                    return Column(
+                      children: [
+                        const SizedBox(height: 20.0),
+                        Text(
+                          'error_message'.tr(),
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ]
+                    );
+                  },
                   loadSuccess: (state) {
                     final weatherList = state.weatherForecast.daily ??
                         state.weatherForecast.hourly!;
